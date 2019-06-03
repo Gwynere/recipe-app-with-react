@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 export default class Recipe extends Component {
     render() {
-        console.log(this.props)
         const {
             image_url,
             title,
@@ -10,6 +9,8 @@ export default class Recipe extends Component {
             publisher,
             recipe_id
         } = this.props.recipe;
+
+        const { handleDetails } = this.props;
 
         return (
             <React.Fragment>
@@ -23,7 +24,13 @@ export default class Recipe extends Component {
                             </h6>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-primary text-capitalize" type="button">Details</button>
+                            <button
+                                className="btn btn-primary text-capitalize"
+                                type="button"
+                                onClick={() => handleDetails(0, recipe_id)}
+                            >
+                                Details
+                            </button>
                             <a href={source_url} 
                                 className="btn btn-succes mx-2 text-capitalize"
                                 target="_blank"
