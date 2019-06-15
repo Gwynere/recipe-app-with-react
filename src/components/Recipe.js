@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class Recipe extends Component {
     render() {
@@ -13,10 +13,11 @@ export default class Recipe extends Component {
         const { handleDetails } = this.props;
 
         return (
-            <React.Fragment>
+            // Card element for each recipe on the homepage
+            <Fragment>
                 <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
                     <div className="card">
-                        <img className="img-card-top" src={image_url} style={{height:"14rem"}} alt="recipe"/>
+                        <img className="img-card-top" src={image_url} style={{height:"14rem"}} alt="recipe"/> 
                         <div className="card-body text-capitalized">
                             <h6>{title}</h6>
                             <h6 className="text-warning text-slanted">
@@ -39,7 +40,7 @@ export default class Recipe extends Component {
                         </div>
                     </div>
                 </div>
-            </React.Fragment>
+            </Fragment>
         )
     }
 }

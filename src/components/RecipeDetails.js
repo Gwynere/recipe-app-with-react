@@ -2,27 +2,6 @@ import React, { Component } from 'react';
 import { recipe } from '../tempDetails';
 
 export default class RecipeDetails extends Component {
-    // constructor(props) {
-    //     super(props)
-
-    //     this.state = {
-    //         recipe: recipe,
-    //         url: `https://www.food2fork.com/api/get?key=66caac779e3d2dd687059e587c0c227b&rId=${this.props.id}`
-    //     }
-    // }
-
-    // async componentDidMount() {
-    //     try {
-    //         const data = await fetch(this.state.url);
-    //         const jsonData = await data.json();
-    //         this.setState({
-    //             recipe: jsonData.recipes
-    //         })
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-
     state = {
         recipe: recipe
     }
@@ -31,6 +10,7 @@ export default class RecipeDetails extends Component {
         const id = this.props.id;
         const url = `https://www.food2fork.com/api/get?key=66caac779e3d2dd687059e587c0c227b&rId=${id}`;
 
+        // fetching the api data
         try {
             const data = await fetch(url);
             const jsonData = await data.json();
@@ -58,6 +38,7 @@ export default class RecipeDetails extends Component {
         const { handleIndex } = this.props
 
         return (
+            // creating the details for each recipe and injecting the api data
             <React.Fragment>
                 <div className="container">
                     <div className="row">

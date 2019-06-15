@@ -17,6 +17,7 @@ class App extends Component {
     query: '&q='
   }
 
+  // fetching the api
   async getRecipes(){
     try{
       const data = await fetch(this.state.url);
@@ -36,7 +37,6 @@ class App extends Component {
     } catch(error){
       console.log(error)
     }
-    
   }
 
   componentDidMount(){
@@ -95,7 +95,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.recipes)
+    // it renders the homepage or the recipe details
     return(
       <React.Fragment>
         {this.displayPage(this.state.pageIndex)}

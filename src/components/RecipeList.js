@@ -14,6 +14,8 @@ export default class RecipeList extends Component {
                         <div className="col-10 mx-auto col-md-6 text-center text-uppercase mb-3"></div>
                         <h1 className="text-slanted">recipe list</h1>
                     </div>
+
+                    {/* it renders the api data */}
                     <div className="row">
                     {error ? <h1 className="text-danger text-center">{error}</h1> 
                     : recipes.map(recipe => {
